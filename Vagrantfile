@@ -52,6 +52,7 @@ Vagrant.configure("2") do |config|
       m.vm.provision "shell", inline:<<-SHELL
       sudo -s
       cp -f /vagrant/kubectl /usr/local/bin/kubectl
+      chmod +x /usr/local/bin/kubectl
       #{export_env_and_deploy($IPs, "m1", k, "eth1")}
       SHELL
     end
